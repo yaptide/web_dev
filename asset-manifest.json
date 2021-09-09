@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/web_dev/static/css/main.ec78d76c.chunk.css",
-    "main.js": "/web_dev/static/js/main.f02a0479.chunk.js",
-    "main.js.map": "/web_dev/static/js/main.f02a0479.chunk.js.map",
+    "main.js": "/web_dev/static/js/main.344c229a.chunk.js",
+    "main.js.map": "/web_dev/static/js/main.344c229a.chunk.js.map",
     "runtime-main.js": "/web_dev/static/js/runtime-main.91e97a78.js",
     "runtime-main.js.map": "/web_dev/static/js/runtime-main.91e97a78.js.map",
-    "static/js/2.8423170b.chunk.js": "/web_dev/static/js/2.8423170b.chunk.js",
-    "static/js/2.8423170b.chunk.js.map": "/web_dev/static/js/2.8423170b.chunk.js.map",
+    "static/js/2.33346618.chunk.js": "/web_dev/static/js/2.33346618.chunk.js",
+    "static/js/2.33346618.chunk.js.map": "/web_dev/static/js/2.33346618.chunk.js.map",
     "static/js/3.515d1d7c.chunk.js": "/web_dev/static/js/3.515d1d7c.chunk.js",
     "static/js/3.515d1d7c.chunk.js.map": "/web_dev/static/js/3.515d1d7c.chunk.js.map",
     "static/js/4.5417915a.chunk.js": "/web_dev/static/js/4.5417915a.chunk.js",
@@ -17,15 +17,15 @@
     "static/js/6.bb0fe030.chunk.js.map": "/web_dev/static/js/6.bb0fe030.chunk.js.map",
     "index.html": "/web_dev/index.html",
     "static/css/main.ec78d76c.chunk.css.map": "/web_dev/static/css/main.ec78d76c.chunk.css.map",
-    "static/js/2.8423170b.chunk.js.LICENSE.txt": "/web_dev/static/js/2.8423170b.chunk.js.LICENSE.txt",
-    "static/js/CSGWorker.1e037309.worker.js": "/web_dev/static/js/CSGWorker.1e037309.worker.js",
-    "static/js/CSGWorker.1e037309.worker.js.LICENSE.txt": "/web_dev/static/js/CSGWorker.1e037309.worker.js.LICENSE.txt",
-    "static/js/CSGWorker.1e037309.worker.js.map": "/web_dev/static/js/CSGWorker.1e037309.worker.js.map"
+    "static/js/2.33346618.chunk.js.LICENSE.txt": "/web_dev/static/js/2.33346618.chunk.js.LICENSE.txt",
+    "static/js/CSGWorker.898c24b8.worker.js": "/web_dev/static/js/CSGWorker.898c24b8.worker.js",
+    "static/js/CSGWorker.898c24b8.worker.js.LICENSE.txt": "/web_dev/static/js/CSGWorker.898c24b8.worker.js.LICENSE.txt",
+    "static/js/CSGWorker.898c24b8.worker.js.map": "/web_dev/static/js/CSGWorker.898c24b8.worker.js.map"
   },
   "entrypoints": [
     "static/js/runtime-main.91e97a78.js",
-    "static/js/2.8423170b.chunk.js",
+    "static/js/2.33346618.chunk.js",
     "static/css/main.ec78d76c.chunk.css",
-    "static/js/main.f02a0479.chunk.js"
+    "static/js/main.344c229a.chunk.js"
   ]
 }
