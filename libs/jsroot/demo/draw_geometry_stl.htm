@@ -1,57 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Reading geometry and STL file</title>
-   </head>
+<head>
+   <meta charset="UTF-8">
+   <title>Reading geometry and STL file</title>
+   <script src="../scripts/JSRoot.core.js" type="text/javascript"></script>
+</head>
 
-   <body>
-      <div id="drawing" style="width:800px; height:600px"></div>
-   </body>
+<body>
 
-   <script type='module'>
+  <div id="drawing" style="width:800px; height:600px"></div>
 
-      import { httpRequest, loadScript, draw } from '../modules/main.mjs';
+   <script type='text/javascript'>
+     const geom_file = "../../files/geom/evegeoshape.json.gz",
+           stl_file = 'https://threejs.org/examples/models/stl/ascii/slotted_disk.stl';
 
-      import * as THREE from '../modules/three.mjs';
+     async function draw_geometry_and_stl() {
+        // get geometry object
+        let obj = await JSROOT.httpRequest(geom_file, "object");
 
-      import { Mesh, MeshPhongMaterial } from '../modules/three.mjs';
+        // draw object, also load three.js functionality
+        let geo_painter = await JSROOT.draw("drawing", obj);
 
-      const geom_file = "https://root.cern/js/files/geom/evegeoshape.json.gz",
-            stl_file = "https://threejs.org/examples/models/stl/ascii/slotted_disk.stl";
+        // load extra three.js sources
+        await JSROOT.require("https://threejs.org/examples/js/loaders/STLLoader.js");
 
-      // get geometry object
-      let obj = await httpRequest(geom_file, "object");
+        const loader = new THREE.STLLoader();
+        loader.load(stl_file, function ( geometry ) {
 
-      // draw object, also load three.js functionality
-      let geo_painter = await draw("drawing", obj);
+           const material = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
+           const mesh = new THREE.Mesh( geometry, material );
 
-      // define global THREE handle requred by STLLoader.js
-      globalThis.THREE = Object.assign({}, THREE);
+           mesh.position.set( 600, 0, 0 );
+           mesh.rotation.set( 0, - Math.PI / 2, 0 );
+           mesh.scale.set( 500, 500, 500 );
 
-      // load extra three.js sources
-      await loadScript("https://threejs.org/examples/js/loaders/STLLoader.js");
+           mesh.castShadow = true;
+           mesh.receiveShadow = true;
 
-      const loader = new globalThis.THREE.STLLoader();
-      loader.load(stl_file, function ( geometry ) {
+           // this is for JSROOT to mark as THREE.Mesh object
+           mesh._typename = "THREE.Mesh";
 
-         const material = new MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200 } );
-         const mesh = new Mesh( geometry, material );
+           geo_painter.drawExtras(mesh, "stl");
 
-         mesh.position.set( 600, 0, 0 );
-         mesh.rotation.set( 0, - Math.PI / 2, 0 );
-         mesh.scale.set( 500, 500, 500 );
+        });
+     }
 
-         mesh.castShadow = true;
-         mesh.receiveShadow = true;
-
-         // this is for JSROOT to mark as THREE.Mesh object
-         mesh._typename = "Mesh";
-
-         geo_painter.drawExtras(mesh, "stl");
-      });
+     draw_geometry_and_stl();
 
    </script>
+
+</body>
 
 </html>
 

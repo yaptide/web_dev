@@ -2,26 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="utf-8">
+      <meta charset="UTF-8">
       <title>Draw of single element</title>
-      <link rel="shortcut icon" href="jsrootsys/img/RootIcon.ico"/>
+      <script type="text/javascript" src="jsrootsys/scripts/JSRoot.core.js"></script>
    </head>
 
    <body>
       <div id="drawGUI">
-         loading ...
+         loading scripts...
       </div>
 
+      <script type='text/javascript'>
+         function GetCachedHierarchy() { return "$$$h.json$$$"; }
+         function GetCachedObject() { return "$$$root.json$$$"; }
+
+         JSROOT.buildGUI("drawGUI", "draw");
+      </script>
    </body>
-
-   <script type='module'>
-
-      import { buildGUI, internals } from './jsrootsys/modules/gui.mjs';
-
-      internals.getCachedHierarchy = function() { return "$$$h.json$$$"; }
-      internals.getCachedObject = function() { return "$$$root.json$$$"; }
-
-      buildGUI("drawGUI", "draw");
-   </script>
 
 </html>

@@ -3,14 +3,12 @@
 // geometry in https://root.cern/files/alice_ESDgeometry.root
 // Have to return Promise with list of objects which can be drawn on geometry
 
-async function extract_geo_tracks(tree, opt) {
+function extract_geo_tracks(tree, opt) {
    // as first argument, tree should be provided
 
-   console.log('CALL async extract_geo_tracks');
+   console.log('CALL extract_geo_tracks');
 
-   let handle = await JSROOT.require('tree');
-
-   const selector = new handle.TSelector();
+   const selector = new JSROOT.TSelector();
 
    selector.addBranch("ESDfriend.fTracks.fPoints","pnts");
 
@@ -39,16 +37,19 @@ async function extract_geo_tracks(tree, opt) {
          track.fLineWidth = 2;
          track.fLineColor = 3;
          lst.Add(track);
-         if (numtracks > 100) return this.Abort(); // do not accumulate too many tracks
+         if (numtracks>100) return this.Abort(); // do not accumulate too many tracks
       }
    }
 
-   selector.Terminate = function() {
-      // function called when processing finishes
-      console.log('Read done num entries', numentry, 'tracks', numtracks);
-   }
+   return new Promise(resolveFunc => {
+      selector.Terminate = function(res) {
+         // function called when processing finishes
+         console.log('Read done num entries', numentry, 'tracks', numtracks);
+         resolveFunc(lst);
+      }
 
-   return handle.treeProcess(tree, selector);
+      tree.Process(selector);
+   });
 }
 
-console.log('LOAD alice_esd.js with JSROOT', JSROOT.version);
+console.log('LOAD alice_esd.js JSROOT', JSROOT.version);
