@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.4ff0d9bc.css",
-    "main.js": "./static/js/main.863e6f0b.js",
-    "static/js/462.0ae6fa74.chunk.js": "./static/js/462.0ae6fa74.chunk.js",
-    "static/js/100.6037c275.chunk.js": "./static/js/100.6037c275.chunk.js",
+    "main.css": "./static/css/main.cf16d1ab.css",
+    "main.js": "./static/js/main.5a427411.js",
+    "static/js/462.6057798b.chunk.js": "./static/js/462.6057798b.chunk.js",
+    "static/js/100.d4a91621.chunk.js": "./static/js/100.d4a91621.chunk.js",
     "static/js/787.a5df3540.chunk.js": "./static/js/787.a5df3540.chunk.js",
-    "static/js/352.469dabfd.chunk.js": "./static/js/352.469dabfd.chunk.js",
-    "static/js/760.fd85dd7c.chunk.js": "./static/js/760.fd85dd7c.chunk.js",
+    "static/js/352.adc414d1.chunk.js": "./static/js/352.adc414d1.chunk.js",
+    "static/js/760.91e2f204.chunk.js": "./static/js/760.91e2f204.chunk.js",
     "index.html": "./index.html",
-    "main.4ff0d9bc.css.map": "./static/css/main.4ff0d9bc.css.map",
-    "main.863e6f0b.js.map": "./static/js/main.863e6f0b.js.map",
-    "462.0ae6fa74.chunk.js.map": "./static/js/462.0ae6fa74.chunk.js.map",
-    "100.6037c275.chunk.js.map": "./static/js/100.6037c275.chunk.js.map",
+    "main.cf16d1ab.css.map": "./static/css/main.cf16d1ab.css.map",
+    "main.5a427411.js.map": "./static/js/main.5a427411.js.map",
+    "462.6057798b.chunk.js.map": "./static/js/462.6057798b.chunk.js.map",
+    "100.d4a91621.chunk.js.map": "./static/js/100.d4a91621.chunk.js.map",
     "787.a5df3540.chunk.js.map": "./static/js/787.a5df3540.chunk.js.map",
-    "352.469dabfd.chunk.js.map": "./static/js/352.469dabfd.chunk.js.map",
-    "760.fd85dd7c.chunk.js.map": "./static/js/760.fd85dd7c.chunk.js.map"
+    "352.adc414d1.chunk.js.map": "./static/js/352.adc414d1.chunk.js.map",
+    "760.91e2f204.chunk.js.map": "./static/js/760.91e2f204.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ff0d9bc.css",
-    "static/js/main.863e6f0b.js"
+    "static/css/main.cf16d1ab.css",
+    "static/js/main.5a427411.js"
   ]
 }
