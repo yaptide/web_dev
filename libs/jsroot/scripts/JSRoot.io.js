@@ -1084,7 +1084,7 @@ JSROOT.define(['rawinflate'], () => {
                code1 = code2;
                code2 = view.getUint8(o + 1);
 
-               if (((code1 == 13) && (code2 == 10)) || (code1 == 10)) {
+               if ((code1 == 13) && (code2 == 10)) {
                   if ((line.length > 2) && (line.substr(0, 2) == '--') && (line !== boundary))
                      return rejectFunc(Error('Decode multipart message, expect boundary' + boundary + ' got ' + line));
 
@@ -1105,10 +1105,8 @@ JSROOT.define(['rawinflate'], () => {
 
                   if ((nline > 1) && (line.length === 0)) finish_header = true;
 
-                  nline++; line = "";
-                  if (code1 != 10) {
-                     o++; code2 = view.getUint8(o + 1);
-                  }
+                  o++; nline++; line = "";
+                  code2 = view.getUint8(o + 1);
                } else {
                   line += String.fromCharCode(code1);
                }
@@ -1264,9 +1262,9 @@ JSROOT.define(['rawinflate'], () => {
             return file.fStreamerInfos;
 
          if ((key.fClassName == 'TDirectory' || key.fClassName == 'TDirectoryFile')) {
+            isdir = true;
             let dir = file.getDir(obj_name, cycle);
             if (dir) return dir;
-            isdir = true;
          }
 
          if (!isdir && only_dir)
@@ -1274,29 +1272,29 @@ JSROOT.define(['rawinflate'], () => {
 
          read_key = key;
 
-         return file.readObjBuffer(key).then(buf => {
-            if (isdir) {
-               let dir = new TDirectory(file, obj_name, cycle);
-               dir.fTitle = read_key.fTitle;
-               return dir.readKeys(buf);
+         return file.readObjBuffer(key);
+      }).then(buf => {
+         if (isdir) {
+            let dir = new TDirectory(file, obj_name, cycle);
+            dir.fTitle = read_key.fTitle;
+            return dir.readKeys(buf);
+         }
+
+         let obj = {};
+         buf.mapObject(1, obj); // tag object itself with id==1
+         buf.classStreamer(obj, read_key.fClassName);
+
+         if ((read_key.fClassName === 'TF1') || (read_key.fClassName === 'TF2'))
+            return file._readFormulas(obj);
+
+         if (!file.readTrees) return obj;
+
+         return JSROOT.require('tree').then(() => {
+            if (file.readTrees) {
+               file.readTrees.forEach(t => JSROOT.extend(t, jsrio.TTreeMethods))
+               delete file.readTrees;
             }
-
-            let obj = {};
-            buf.mapObject(1, obj); // tag object itself with id==1
-            buf.classStreamer(obj, read_key.fClassName);
-
-            if ((read_key.fClassName === 'TF1') || (read_key.fClassName === 'TF2'))
-               return file._readFormulas(obj);
-
-            if (!file.readTrees) return obj;
-
-            return JSROOT.require('tree').then(() => {
-               if (file.readTrees) {
-                  file.readTrees.forEach(t => JSROOT.extend(t, jsrio.TTreeMethods))
-                  delete file.readTrees;
-               }
-               return obj;
-            });
+            return obj;
          });
       });
    }
