@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.1b94dfb1.css",
-    "main.js": "./static/js/main.240cc402.js",
-    "static/js/462.7c56f5ea.chunk.js": "./static/js/462.7c56f5ea.chunk.js",
-    "static/js/100.d4a91621.chunk.js": "./static/js/100.d4a91621.chunk.js",
-    "static/js/787.a5df3540.chunk.js": "./static/js/787.a5df3540.chunk.js",
-    "static/js/352.adc414d1.chunk.js": "./static/js/352.adc414d1.chunk.js",
-    "static/js/760.91e2f204.chunk.js": "./static/js/760.91e2f204.chunk.js",
-    "index.html": "./index.html",
-    "main.1b94dfb1.css.map": "./static/css/main.1b94dfb1.css.map",
-    "main.240cc402.js.map": "./static/js/main.240cc402.js.map",
-    "462.7c56f5ea.chunk.js.map": "./static/js/462.7c56f5ea.chunk.js.map",
-    "100.d4a91621.chunk.js.map": "./static/js/100.d4a91621.chunk.js.map",
-    "787.a5df3540.chunk.js.map": "./static/js/787.a5df3540.chunk.js.map",
-    "352.adc414d1.chunk.js.map": "./static/js/352.adc414d1.chunk.js.map",
-    "760.91e2f204.chunk.js.map": "./static/js/760.91e2f204.chunk.js.map"
+    "main.css": "https://yaptide.github.io/web_dev/static/css/main.1b94dfb1.css",
+    "main.js": "https://yaptide.github.io/web_dev/static/js/main.53ef4676.js",
+    "static/js/462.ef0d2c13.chunk.js": "https://yaptide.github.io/web_dev/static/js/462.ef0d2c13.chunk.js",
+    "static/js/100.2459f4d3.chunk.js": "https://yaptide.github.io/web_dev/static/js/100.2459f4d3.chunk.js",
+    "static/js/787.a5df3540.chunk.js": "https://yaptide.github.io/web_dev/static/js/787.a5df3540.chunk.js",
+    "static/js/352.adc414d1.chunk.js": "https://yaptide.github.io/web_dev/static/js/352.adc414d1.chunk.js",
+    "static/js/760.91e2f204.chunk.js": "https://yaptide.github.io/web_dev/static/js/760.91e2f204.chunk.js",
+    "index.html": "https://yaptide.github.io/web_dev/index.html",
+    "main.1b94dfb1.css.map": "https://yaptide.github.io/web_dev/static/css/main.1b94dfb1.css.map",
+    "main.53ef4676.js.map": "https://yaptide.github.io/web_dev/static/js/main.53ef4676.js.map",
+    "462.ef0d2c13.chunk.js.map": "https://yaptide.github.io/web_dev/static/js/462.ef0d2c13.chunk.js.map",
+    "100.2459f4d3.chunk.js.map": "https://yaptide.github.io/web_dev/static/js/100.2459f4d3.chunk.js.map",
+    "787.a5df3540.chunk.js.map": "https://yaptide.github.io/web_dev/static/js/787.a5df3540.chunk.js.map",
+    "352.adc414d1.chunk.js.map": "https://yaptide.github.io/web_dev/static/js/352.adc414d1.chunk.js.map",
+    "760.91e2f204.chunk.js.map": "https://yaptide.github.io/web_dev/static/js/760.91e2f204.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1b94dfb1.css",
-    "static/js/main.240cc402.js"
+    "static/js/main.53ef4676.js"
   ]
 }
