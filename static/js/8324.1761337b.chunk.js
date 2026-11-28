@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkthreejs_editor_react||=[]).push([[8324],{8324(e,r,t){var s={"+":"inserted","-":"deleted","@":"meta"};const n={name:"diff",token:function(e){var r=e.string.search(/[\t ]+?$/);if(!e.sol()||0===r)return e.skipToEnd(),("error "+(s[e.string.charAt(0)]||"")).replace(/ $/,"");var t=s[e.peek()]||e.skipToEnd();return-1===r?e.skipToEnd():e.pos=r,t}};t.d(r,["diff",0,n])}}]);
+//# sourceMappingURL=8324.1761337b.chunk.js.map
